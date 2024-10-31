@@ -1,0 +1,53 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Test Page for D:\Projects\Cursor\SutraParser\output\books\0083-ml.json</title>
+            <style>
+        
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
+            <script>
+                function convertToSimplified() {
+                    var converter = OpenCC.Converter({ from: 'tw', to: 'cn' });
+                    document.querySelectorAll('.convertible').forEach(function(element) {
+                        element.textContent = converter(element.textContent);
+                    });
+                }
+
+                function convertToTraditional() {
+                    var converter = OpenCC.Converter({ from: 'cn', to: 'tw' });
+                    document.querySelectorAll('.convertible').forEach(function(element) {
+                        element.textContent = converter(element.textContent);
+                    });
+                }
+
+                function changeFont() {
+                    var selectedFont = document.getElementById('fontSelector').value;
+                    document.getElementById('textParagraph').style.fontFamily = selectedFont;
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Test Page for {json_file}</h1>
+            <button onclick="convertToSimplified()">Convert to Simplified</button>
+            <button onclick="convertToTraditional()">Convert to Traditional</button>
+            <select id="fontSelector" onchange="changeFont()">
+        
+            </select>
+            <p id="textParagraph" class="convertible" style="font-family: ''; white-space: pre-wrap;">{
+    "meta": {
+        "id": "0083-ml",
+        "Bu": "大乘华严部·第0083部",
+        "title": "大方广佛华严经六十卷目录",
+        "Arthur": "东晋天竺三藏佛驮跋陀罗等译",
+        "last_bu": {},
+        "next_bu": {}
+    },
+    "juans": []
+}</p>
+        </body>
+        </html>
+        

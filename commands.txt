@@ -1,0 +1,16 @@
+# Setup commands for the HTML to JSON parser
+
+# 1. Create a virtual environment (optional but recommended)
+python -m venv venv
+
+# 2. Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Unix or MacOS:
+source venv/bin/activate
+
+# 3. Install required packages
+pip install beautifulsoup4
+
+# 4. Run the parser
+python parser.py --input input --output output
